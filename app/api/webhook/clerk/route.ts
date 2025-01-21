@@ -1,8 +1,10 @@
 import { Webhook } from 'svix'
 import { headers } from 'next/headers'
-import { clerkClient, WebhookEvent } from '@clerk/nextjs/server'
+import {  WebhookEvent } from '@clerk/nextjs/server'
 import { createUser, deleteUser, updateUser } from '@/lib/actions/user.actions'
+import { clerkClient } from '@clerk/clerk-sdk-node'
 
+const userList = await clerkClient.users.getUserList()
 import { NextResponse } from 'next/server'
 
  
