@@ -12,7 +12,7 @@ import { CreateUserParams, UpdateUserParams } from '@/types'
 
 export async function createUser(user: CreateUserParams) {
   try {
-    await connectToDatabase()
+    await connectToDatabase();
 
     const newUser = await User.create(user)
     return JSON.parse(JSON.stringify(newUser))
@@ -23,7 +23,7 @@ export async function createUser(user: CreateUserParams) {
 
 export async function getUserById(userId: string) {
   try {
-    await connectToDatabase()
+    await connectToDatabase();
 
     const user = await User.findById(userId)
 
